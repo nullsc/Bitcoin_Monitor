@@ -1,2 +1,2 @@
-# Bitcoin_Monitor
-Tool to monitor crypto prices
+# Bitcoin Monitor
+Tool to monitor crypto prices written in python
