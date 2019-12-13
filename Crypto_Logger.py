@@ -1,6 +1,7 @@
 #Basic project to monitor crypto currency prices
 #07/12/2019
 #work in progress
+#to do: log to file, add multi coins
 
 try:
     import requests, sys, json, time
