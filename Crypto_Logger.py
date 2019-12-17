@@ -15,7 +15,7 @@ print("Crypto currency price logger")
 print("github.com/nullsc/Bitcoin_Monitor/ \n")
 
 apiUrl = 'https://api.coinmarketcap.com/v1/ticker/'
-btcalertPRICE = '7569.1'
+btcalertPRICE = float('7569.1')
 TIME = 30 #time in minutes to poll
 logFile = "log.txt"
 
@@ -23,7 +23,7 @@ logFile = "log.txt"
 class checker(object):
     def __init__(self, name, alertPrice = 0):
         self.name = name #instance
-        self.coin = "null"
+        self.coin = "null" #none
         self.sym = "null"
         self.price = 0
         self.alertPrice = alertPrice #0 by default, zero will also deactivate it
