@@ -18,3 +18,5 @@ Save the details in the file and now run the python programming and it will star
 
 ## TODO
 Add HTML logging, add the feature to disable logging(done), neaten up the class and make is call on init, single call function to operate
+
+#bitcoin #crypto #api #monitor
