@@ -4,7 +4,7 @@ This tool will poll the mcap site and download the json from the API, it will lo
 
 ## How To use
 You must have Python 3.5+ and the requests library installed.
-Declare a new variabe of instance checker. The first argument is a label which can be anything, the second argument sets whether the logging to file feature is active. The third argument will be the value that will send out an alert if the price goes below that. If you do not want to use the alerts feature then set it to 0 or just don't put anything for the third argument.
+Declare a new variable of instance checker. The first argument is a label which can be anything, the second is the coin index, the third argument sets whether the logging to file feature is active. The fourth argument will be the value that will send out an alert if the price goes below that. If you do not want to use the alerts feature then set it to 0 or just don't put anything for the third argument.
 
 eth = checker("eth", True, 140)
 
