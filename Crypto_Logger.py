@@ -1,10 +1,11 @@
 #Basic project to monitor crypto currency prices
 #07/12/2019
 
+version = "v1.1"
 #To use: add a call to the coin you want
 #number is which part of json it uses: 0 is btc
 
-#TODO: may add feature to disable the print out(done), html logs, other notifications
+#TODO: may add feature to disable the print out, html logs, other notifications, add try statement to check internet connection
 
 #Issues: On the ticker directory I noticed that the coins are sorted by 'rank'. Although this is not an issue
 #currently it could become an issue if you were using the tool long term and the ranks changed.
@@ -18,10 +19,10 @@ except ImportError as e:
     print(e)
 
 print("Crypto currency prices logger")
+print("https://github.com/nullsc/Bitcoin_Monitor \n")
 
-#apiUrl = 'https://api.coinmarketcap.com/v1/ticker/bitcoin/' #https://api.coinmarketcap.com/v1/ticker dir
 apiUrl = 'https://api.coinmarketcap.com/v1/ticker/'
-btcalertPRICE = 7000.0
+btcalertPRICE = 7000.0 
 TIME = 30 #time in minutes to poll
 logFile = "log.txt"
 printPrices = True #Will print the prices each time
@@ -48,11 +49,21 @@ class checker(object):
             f.close()
 
     def scrape(self):
-        priceRequest = requests.get(apiUrl)
+        try:
+            priceRequest = requests.get(apiUrl)
+        except requests.exceptions.Timeout: #if it timesout, sleep then retry
+            print("Connection Timed Out, Retrying")
+            time.sleep(1 * 60)
+            return self.scrape()
+        except requests.exceptions.RequestException as e: #if there is an error, sleep then retry
+            print(e)
+            time.sleep(1 * 60)
+            return self.scrape()
+
         cryptoData = json.loads(priceRequest.text) #convert to dict
 
         self.coin = cryptoData[self.cIndex]['name']
-        self.price = float(cryptoData[self.cIndex]['price_usd']) # 7569.17021495
+        self.price = float(cryptoData[self.cIndex]['price_usd'])
         self.sym = cryptoData[self.cIndex]['symbol']
         if(printPrices):
             print(self.coin)
@@ -72,7 +83,8 @@ class checker(object):
 
 
 btc = checker("btc", 0, True, btcalertPRICE) #note, coin index, logging?, price to alert at
-eth = checker("eth", 1, True, 140)
+eth = checker("eth", 1, True, 100)
+
 
 while (1):
     btc.scrape()
