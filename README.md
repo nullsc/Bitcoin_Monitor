@@ -17,7 +17,7 @@ https://api.coinmarketcap.com/v1/ticker/
 Save the details in the file and now run the python programming and it will start logging.
 
 ## TODO
-Add HTML logging, add the feature to disable logging(done), neaten up the class and make is call on init, single call function to operate
+Add HTML logging, add the feature to disable logging(done), neaten up the class and make is call on init, single call function to operate, add a function to draw a graph
 
 #bitcoin #crypto #api #monitor
 
