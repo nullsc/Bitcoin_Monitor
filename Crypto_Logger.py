@@ -56,6 +56,7 @@ class checker(object):
             time.sleep(1 * 60)
             return self.scrape()
         except requests.exceptions.RequestException as e: #if there is an error, sleep then retry
+            print("Connection Error, Retrying")
             print(e)
             time.sleep(1 * 60)
             return self.scrape()
