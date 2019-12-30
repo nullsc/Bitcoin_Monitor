@@ -3,7 +3,7 @@ Tool to monitor crypto prices written in python.
 This tool will poll the mcap site and download the json from the API, it will log the prices and print out an alert if it dips below a user provided number.
 
 ## How To use
-You must have Python 3.5+ and the requests library installed.
+You must have Python 3.5+ and the requests library installed (use 'pip install requests' to do this).
 Declare a new variable of instance checker. The first argument is a label which can be anything, the second is the coin index, the third argument sets whether the logging to file feature is active. The fourth argument will be the value that will send out an alert if the price goes below that. If you do not want to use the alerts feature then set it to 0 or just don't put anything for the third argument.
 
 eth = checker("eth", 0, True, 140)
