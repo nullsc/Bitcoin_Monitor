@@ -19,6 +19,8 @@ Save the details in the file and now run the python programming and it will star
 ## TODO
 Add HTML logging, add the feature to disable logging(done), neaten up the class and make it call on init, single call function to operate, add a function to draw a graph, maybe add several alerts, add a csv logger
 
+https://api.coinmarketcap.com/v1/ticker/ is now offline
+
 #bitcoin #crypto #api #monitor
 
 ![alt text](https://github.com/nullsc/Bitcoin_Monitor/blob/master/cryptoJson.PNG "Screen Shot")
