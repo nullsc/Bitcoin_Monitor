@@ -12,7 +12,7 @@ In the main loop add the code to start scraping tp call the function. If you are
 
 eth.scrape()
 
-https://api.coinmarketcap.com/v1/ticker/
+https://api.coinmarketcap.com/v1/ticker/ - now offline :(
 
 Save the details in the file and now run the python programming and it will start logging.
 
