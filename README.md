@@ -21,6 +21,6 @@ Add HTML logging, add the feature to disable logging(done), neaten up the class 
 
 https://api.coinmarketcap.com/v1/ticker/ is now offline
 
-#bitcoin #crypto #api #monitor
+#bitcoin #crypto #api #monitor #blockchain
 
 ![alt text](https://github.com/nullsc/Bitcoin_Monitor/blob/master/cryptoJson.PNG "Screen Shot")
