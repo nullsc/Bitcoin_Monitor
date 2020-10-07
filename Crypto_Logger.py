@@ -48,7 +48,6 @@ class checker(object):
         timeStamp = datetime.now().strftime('%d:%m:%Y %H:%M') #https://docs.python.org/3/library/time.html#time.strftime
         with open(logFile, 'a') as f:
             f.write("[" + self.sym + "]" + timeStamp + ": " + str(self.price) + " " + msg + "\n")
-            f.close()
 
     def scrape(self):
         try:
